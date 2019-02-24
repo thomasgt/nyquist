@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package nyquist.core.channel;
+
+import "google/protobuf/wrappers.proto"
+
+import "nyquist/core/common.proto"
+
+service ChannelService {
+  rpc GetSampleRate (ChannelIdentifier) returns (google.protobuf.IntValue);
+  rpc GetSampleType (ChannelIdentifier) returns (SampleType);
+  rpc GetStream (ChannelIdentifier) returns (stream Chunk);
+}
+
+
+
+
